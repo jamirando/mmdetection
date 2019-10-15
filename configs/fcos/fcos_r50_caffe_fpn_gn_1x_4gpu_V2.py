@@ -60,8 +60,8 @@ img_norm_cfg = dict(
 train_pipeline = [
     dict(type='LoadImageFromFile'),
     dict(type='LoadAnnotations', with_bbox=True),
-    dict(type='Resize', img_scale=(1333, 800), keep_ratio=True),
-    # dict(type='Resize', img_scale=(640, 480), keep_ratio=True),
+    # dict(type='Resize', img_scale=(1333, 800), keep_ratio=True),
+    dict(type='Resize', img_scale=(640, 480), keep_ratio=True),
     dict(type='RandomFlip', flip_ratio=0.5),
     dict(type='Normalize', **img_norm_cfg),
     dict(type='Pad', size_divisor=32),
@@ -72,8 +72,8 @@ test_pipeline = [
     dict(type='LoadImageFromFile'),
     dict(
         type='MultiScaleFlipAug',
-        img_scale=(1333, 800),
-        # img_scale=(640, 480),
+        # img_scale=(1333, 800),
+        img_scale=(640, 480),
         flip=False,
         transforms=[
             dict(type='Resize', keep_ratio=True),
@@ -131,7 +131,7 @@ total_epochs = 100
 device_ids = range(4)
 dist_params = dict(backend='nccl')
 log_level = 'INFO'
-work_dir = '/home/samsung2080pc/Documents/fcos_r50_caffe_fpn_gn_1x_4gpu'
+work_dir = '/media/samsung2080pc/New Volume/SAMSUNG/fcos_detection_640x480'
 load_from = None
 resume_from = None
 workflow = [('train', 1)]

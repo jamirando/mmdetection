@@ -58,8 +58,8 @@ class LoadAnnotations(object):
                 'Skip the image "{}" that has no valid gt bbox'.format(
                     file_path))
             return None
-        results['gt_bboxes_ignore'] = ann_info.get('bboxes_ignore', None)
-        results['bbox_fields'].extend(['gt_bboxes', 'gt_bboxes_ignore'])
+        # results['gt_bboxes_ignore'] = ann_info.get('bboxes_ignore', None)
+        # results['bbox_fields'].extend(['gt_bboxes', 'gt_bboxes_ignore'])
         return results
 
     def _load_labels(self, results):
