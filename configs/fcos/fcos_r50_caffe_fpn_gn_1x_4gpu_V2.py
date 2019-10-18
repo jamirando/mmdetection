@@ -85,7 +85,7 @@ test_pipeline = [
         ])
 ]
 data = dict(
-    imgs_per_gpu=4,
+    imgs_per_gpu=16,
     workers_per_gpu=4,
     train=dict(
         type=dataset_type,
@@ -127,11 +127,11 @@ log_config = dict(
     ])
 # yapf:enable
 # runtime settings
-total_epochs = 100
+total_epochs = 1000
 device_ids = range(4)
 dist_params = dict(backend='nccl')
 log_level = 'INFO'
-work_dir = '/media/samsung2080pc/New Volume/SAMSUNG/fcos_detection_640x480'
+work_dir = '/media/samsung2080pc/New Volume/SAMSUNG/objectdetection/fcos_detection_640x480_resnet50'
 load_from = None
 resume_from = None
 workflow = [('train', 1)]

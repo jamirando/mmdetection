@@ -129,11 +129,11 @@ log_config = dict(
     ])
 # yapf:enable
 # runtime settings
-total_epochs = 100
+total_epochs = 500
 device_ids = range(4)
 dist_params = dict(backend='nccl')
 log_level = 'INFO'
-work_dir = '/home/samsung2080pc/Documents/fcos_r50_caffe_fpn_gn_1x_4gpu'
+work_dir = '/media/samsung2080pc/New Volume/SAMSUNG/fcos_detection_640x480'
 load_from = None
 resume_from = None
 workflow = [('train', 1)]#, ('val',1)]
